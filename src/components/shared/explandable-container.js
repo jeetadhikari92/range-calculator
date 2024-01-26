@@ -107,7 +107,7 @@ class ExpandableContainer extends HTMLElement {
           top: containerRect.top + window.scrollY,
           behavior: "smooth",
         });
-      }, 200) 
+      }, 200)
     }
   }
 }
