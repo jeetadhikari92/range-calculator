@@ -62,14 +62,11 @@ class TeslaSPage extends HTMLElement {
       expandableContainer.querySelector("range-calculator");
     if (!existingRangeSelectorComponent) {
       this.setupRangeCalculator(expandableContainer).then(() => {
-        requestAnimationFrame(() => {
-          expandableContainer.scrollToBottom();
-        });
+        expandableContainer.scrollToBottom();
       });
-    }
-    requestAnimationFrame(() => {
+    } else {
       expandableContainer.scrollToBottom();
-    });
+    }
   }
 
   async setupRangeCalculator(containerEl) {
