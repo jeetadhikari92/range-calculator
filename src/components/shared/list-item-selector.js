@@ -64,7 +64,6 @@ class ListItemSelector extends HTMLElement {
                 
                 .list-item-selector-value {
                     font-size: 2rem;
-                    // margin-right: 2rem;
                     margin-left: 2rem;
                 }
                 
@@ -72,7 +71,6 @@ class ListItemSelector extends HTMLElement {
                     margin-left: auto;
                     display: flex;
                     flex-direction: column;
-                    margin-right: 1rem;
                 }
                 
                 .list-item-selector-actions > hr {
@@ -83,8 +81,8 @@ class ListItemSelector extends HTMLElement {
                 }
                 
                 .list-item-selector-actions > button {
-                    width: 30px;
-                    height: 16px;
+                    width: 61px;
+                    height: 24px;
                     background-repeat: no-repeat;
                     background-position: center;
                     border: none;

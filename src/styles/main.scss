@@ -83,6 +83,9 @@ body {
       color: #fff;
       text-decoration: none;
       font-family: "Montserrat-Medium", sans-serif;
+      @include respond(small-phone-port) {
+        padding: 5px;
+      }
       @include respond(phone-port) {
         padding: 10px;
         font-family: "Montserrat-Light", sans-serif;

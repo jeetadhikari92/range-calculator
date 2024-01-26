@@ -16,7 +16,7 @@ import "../square-radio-buttons.js";
 import "../range-display.js";
 
 const paramElementCustomStyle = JSON.stringify({
-  width: window.innerWidth > 1200 ? '15rem' : '100%'
+  width: window.innerWidth > 1200 ? '17rem' : '100%'
 });
 
 class RangeCalculator extends HTMLElement {
