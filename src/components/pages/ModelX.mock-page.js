@@ -1,6 +1,8 @@
 import carBackgroundSmallImage from "../../assets/images/hero-image.png";
 import carBackgroundImage from "../../assets/images/hero-image@2x.png";
 
+// THIS IS JUST A MOCK COMPONENT TO SHOW THAT THE SINGLE PAGE ROUTING WORKS
+
 class ModelX extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `

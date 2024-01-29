@@ -65,7 +65,6 @@ class AcSwitch extends HTMLElement {
           color: ${textColor};
           font-weight: 600;
           cursor: pointer;
-          transition: border 0.3s, box-shadow 0.3s;
         }
         .ac-btn-content {
           display: flex;
@@ -96,7 +95,7 @@ class AcSwitch extends HTMLElement {
           background: -webkit-linear-gradient(199deg, rgba(228,228,228,1) 0%, rgba(255,255,255,1) 100%);
           background: linear-gradient(199deg, rgba(228,228,228,1) 0%, rgba(255,255,255,1) 100%);
           filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4e4e4",endColorstr="#ffffff",GradientType=1);
-          transition: box-shadow 0.3s;
+
           @media (max-width: 1200px) {
             margin: 1rem auto;
           }
@@ -109,7 +108,7 @@ class AcSwitch extends HTMLElement {
         <div class="ac-btn">
           <div class="ac-btn-content">
             <span class="ac-btn-content-text">${buttonLabel} ${buttonText}</span>
-            <img class="ac-btn-content-image" src="${svgSrc}" alt="">
+            <img class="ac-btn-content-image" src="${svgSrc}" alt="${buttonLabel} icon">
           </div>
         </div>
       </button>

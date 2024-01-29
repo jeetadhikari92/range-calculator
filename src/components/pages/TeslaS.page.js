@@ -1,6 +1,6 @@
 import "../shared/explandable-container.js";
-import carBackgroundSmallImage from "../../assets/images/hero-image.png";
-import carBackgroundImage from "../../assets/images/hero-image@2x.png";
+import carBackground from "../../assets/images/hero-image.png";
+import carBackgroundBigImage from "../../assets/images/hero-image@2x.png";
 
 class TeslaSPage extends HTMLElement {
   constructor() {
@@ -12,6 +12,7 @@ class TeslaSPage extends HTMLElement {
   connectedCallback() {
     this.render();
     this.addEventListeners();
+    this.observeForAnimation();
   }
 
   disconnectedCallback() {
@@ -22,21 +23,22 @@ class TeslaSPage extends HTMLElement {
     this.innerHTML = `
       <main class="main">
         <section class="main-intro">
-          <img class="main-intro-background" src="${carBackgroundImage}" 
-            srcset="${carBackgroundSmallImage} 800w, ${carBackgroundImage} 1600w" 
+          <!-- Loading image size depending on the screen width -->
+          <img class="main-intro-background" src="${carBackgroundBigImage}" 
+            srcset="${carBackground} 800w, ${carBackgroundBigImage} 1600w" 
             alt="Tesla S background image" />
         </section>
         <section class="main-text">
-          <h1 class="main-text-header animate" tab-index="0">
+          <h1 class="main-text-header hidden" tab-index="0">
               Far far away, behind the word mountains…
           </h1>
-          <p class="main-text-subtext animate">
+          <p class="main-text-subtext hidden">
               A small river named Duden flows by their place and supplies it with
               the necessary regelialia. It is a paradisematic country, in which
               roasted parts of sentences fly into your mouth.
           </p>
         </section>
-        <expandable-container class="range-calculator-container">
+        <expandable-container class="range-calculator-container hidden">
         </expandable-container>
       </main>
     `;
@@ -60,6 +62,8 @@ class TeslaSPage extends HTMLElement {
     const expandableContainer = this.querySelector("expandable-container");
     const existingRangeSelectorComponent =
       expandableContainer.querySelector("range-calculator");
+    
+    // Prepare to lazy load the range calculator if it doesnt exist already.
     if (!existingRangeSelectorComponent) {
       this.setupRangeCalculator(expandableContainer).then(() => {
         requestAnimationFrame(() => expandableContainer.scrollToBottom());
@@ -70,6 +74,7 @@ class TeslaSPage extends HTMLElement {
   }
 
   async setupRangeCalculator(containerEl) {
+    // Lazy loading the data and range-calulator component only when arow is clicked.
     const rangeData = await this.loadData();
     const { RangeCalculator } = await import(
       "../shared/range-calculator/range-calculator.js"
@@ -82,6 +87,20 @@ class TeslaSPage extends HTMLElement {
     const metric100D = await import("../../data/metric-100D.json");
     const metricP100D = await import("../../data/metric-P100D.json");
     return { metric100D: metric100D.default, metricP100D: metricP100D.default };
+  }
+
+  observeForAnimation() {
+    const animationObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add("show")
+        } else {
+          entry.target.classList.remove("show")
+        }
+      })
+    });
+    const hiddenElement = this.querySelectorAll('.hidden')
+    hiddenElement.forEach(el => animationObserver.observe(el))
   }
 }
 

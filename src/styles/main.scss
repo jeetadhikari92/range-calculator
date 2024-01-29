@@ -300,10 +300,11 @@ body {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      width: 100%;
 
-      @include respond(tab-land) {
-        width: 100%;
-      }
+      // @include respond(tab-land) {
+      //   width: 100%;
+      // }
 
     }
 
@@ -316,6 +317,14 @@ body {
       align-items: center;
       gap: 3rem;
       height: 80px;
+
+      & > #temp-selector {
+        flex-grow: 3;
+      }
+
+      & > #ac-switch-btn {
+        flex-grow: 0;
+      }
 
       @include respond(tab-pro-land) { 
         gap: 1rem;
@@ -339,4 +348,13 @@ body {
   &-disclaimer-text {
     margin-top: 3rem;
   }
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 3s;
+}
+
+.show {
+  opacity: 1;
 }

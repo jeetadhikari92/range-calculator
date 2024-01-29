@@ -15,9 +15,7 @@ import "../ac-switch.js";
 import "../square-radio-buttons.js";
 import "../range-display.js";
 
-const paramElementCustomStyle = JSON.stringify({
-  width: window.innerWidth > 1200 ? '17rem' : '100%'
-});
+let paramElementCustomStyle = JSON.stringify({width: '100%'})
 
 class RangeCalculator extends HTMLElement {
   constructor(rangeData) {
