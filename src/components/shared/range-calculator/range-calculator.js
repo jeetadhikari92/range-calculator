@@ -28,11 +28,11 @@ class RangeCalculator extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    this.speedSelectorEl = document.getElementById("speed-selector");
-    this.tempSelectorrEl = document.getElementById("temp-selector");
-    this.wheelSelectorEl = document.getElementById("wheel-selector");
-    this.acSwitchEl = document.getElementById("ac-switch-btn");
-    this.carBaseImgEl = document.getElementById("base-car-img")
+    this.speedSelectorEl = this.querySelector("#speed-selector");
+    this.tempSelectorrEl = this.querySelector("#temp-selector");
+    this.wheelSelectorEl = this.querySelector("#wheel-selector");
+    this.acSwitchEl = this.querySelector("#ac-switch-btn");
+    this.carBaseImgEl = this.querySelector("#base-car-img");
     this.setAndNotifyObservers();
     this.addEventListeners();
     this.setRenderFns();
@@ -138,7 +138,8 @@ class RangeCalculator extends HTMLElement {
       "change",
       this.handleParamsChange.bind(this),
     );
-    this.carBaseImgEl.addEventListener('load', this.showWheels.bind(this))
+    // Showing car wheels after base car image is loaded.
+    this.carBaseImgEl.addEventListener("load", this.showWheels.bind(this));
   }
 
   removeEventListeners() {
@@ -158,7 +159,7 @@ class RangeCalculator extends HTMLElement {
       "change",
       this.handleParamsChange.bind(this),
     );
-    this.carBaseImgEl.removeEventListener('load', this.showWheels.bind(this))
+    this.carBaseImgEl.removeEventListener("load", this.showWheels.bind(this));
   }
 
   handleParamsChange() {
@@ -172,12 +173,14 @@ class RangeCalculator extends HTMLElement {
   }
 
   updateRangeValue() {
-    document
-      .getElementById("100d-range")
-      .setAttribute("range", this.rangeCalculatorStore.range100D);
-    document
-      .getElementById("p100d-range")
-      .setAttribute("range", this.rangeCalculatorStore.rangeP100D);
+    this.getElementById("100d-range").setAttribute(
+      "range",
+      this.rangeCalculatorStore.range100D,
+    );
+    this.getElementById("p100d-range").setAttribute(
+      "range",
+      this.rangeCalculatorStore.rangeP100D,
+    );
   }
 
   dispatchParamChangeEvent(currentParams) {
@@ -190,9 +193,9 @@ class RangeCalculator extends HTMLElement {
 
   // Calling this function to show wheels only when base car image is loaded.
   showWheels() {
-    this.querySelectorAll(".range-image-container-wheel").forEach(el => {
-      el.classList.remove("hidden")
-    })
+    this.querySelectorAll(".range-image-container-wheel").forEach((el) => {
+      el.classList.remove("hidden");
+    });
   }
 
   renderSpeedItemFn(value) {
