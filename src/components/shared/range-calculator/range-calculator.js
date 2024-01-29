@@ -32,6 +32,7 @@ class RangeCalculator extends HTMLElement {
     this.tempSelectorrEl = document.getElementById("temp-selector");
     this.wheelSelectorEl = document.getElementById("wheel-selector");
     this.acSwitchEl = document.getElementById("ac-switch-btn");
+    this.carBaseImgEl = document.getElementById("base-car-img")
     this.setAndNotifyObservers();
     this.addEventListeners();
     this.setRenderFns();
@@ -46,11 +47,11 @@ class RangeCalculator extends HTMLElement {
         <section class="range">
             <h2 class="range-header">Range per Charge</h2>
             <div class="range-image-container" aria-hidden="true">
-                <img src="${carBaseBig}" srcset="${carBase} 800w, ${carBaseBig} 1600w" alt="Animated car with spinning wheels" />
-                <div id="wheel1" class="range-image-container-wheel">
+                <img id="base-car-img" src="${carBaseBig}" srcset="${carBase} 800w, ${carBaseBig} 1600w" alt="Animated car with spinning wheels" />
+                <div id="wheel1" class="range-image-container-wheel hidden">
                   <img src="${carWheelBig}" srcset="${carWheel} 800w, ${carWheelBig} 1600w" alt="Animated car with spinning wheels" />
                 </div>
-                <div id="wheel2" class="range-image-container-wheel">
+                <div id="wheel2" class="range-image-container-wheel hidden">
                   <img src="${carWheelBig}" srcset="${carWheel} 800w, ${carWheelBig} 1600w" alt="Animated car with spinning wheels" />
                 </div>
                 
@@ -137,6 +138,7 @@ class RangeCalculator extends HTMLElement {
       "change",
       this.handleParamsChange.bind(this),
     );
+    this.carBaseImgEl.addEventListener('load', this.showWheels)
   }
 
   removeEventListeners() {
@@ -156,6 +158,7 @@ class RangeCalculator extends HTMLElement {
       "change",
       this.handleParamsChange.bind(this),
     );
+    this.carBaseImgEl.removeEventListener('load', this.showWheels)
   }
 
   handleParamsChange() {
@@ -183,6 +186,13 @@ class RangeCalculator extends HTMLElement {
       detail: currentParams,
     });
     this.dispatchEvent(paramChangeEvent);
+  }
+
+  // Calling this function to show wheels only when base car image is loaded.
+  showWheels() {
+    this.querySelectorAll(".range-image-container-wheel").forEach(el => {
+      el.classList.remove("hidden")
+    })
   }
 
   renderSpeedItemFn(value) {
