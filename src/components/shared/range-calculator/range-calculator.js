@@ -138,7 +138,7 @@ class RangeCalculator extends HTMLElement {
       "change",
       this.handleParamsChange.bind(this),
     );
-    this.carBaseImgEl.addEventListener('load', this.showWheels)
+    this.carBaseImgEl.addEventListener('load', this.showWheels.bind(this))
   }
 
   removeEventListeners() {
@@ -158,7 +158,7 @@ class RangeCalculator extends HTMLElement {
       "change",
       this.handleParamsChange.bind(this),
     );
-    this.carBaseImgEl.removeEventListener('load', this.showWheels)
+    this.carBaseImgEl.removeEventListener('load', this.showWheels.bind(this))
   }
 
   handleParamsChange() {
