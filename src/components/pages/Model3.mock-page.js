@@ -10,7 +10,7 @@ class Model3 extends HTMLElement {
           <img class="main-intro-background" src="${carBackgroundImage}" 
           srcset="${carBackgroundSmallImage} 800w, ${carBackgroundImage} 1600w" 
           alt="Tesla S background image" />
-          <h1 style="color: white;position: absolute;top: 30%;left: 47%;">Model 3</h1>
+          <h1 style="color: white;position: absolute;top: 30%;left: 47%;">And This is a Page for Model 3</h1>
         </div>
       `;
   }

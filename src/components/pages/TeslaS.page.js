@@ -91,7 +91,7 @@ class TeslaSPage extends HTMLElement {
 
   observeForAnimation() {
     const animationObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, i) => {
         if(entry.isIntersecting) {
           entry.target.classList.add("show")
         } else {

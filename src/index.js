@@ -1,9 +1,11 @@
 import "./styles/main.scss";
-import { NavBar } from "./components/shared/nav-bar.js";
+import { NavBar } from "./components/shared/nav-bar";
 import teslaLogo from "./assets/images/logo.png";
 import { TeslaSPage } from "./components/pages/TeslaS.page";
-import { Model3 } from "./components/pages/Model3.mock-page.js";
-import { ModelX } from "./components/pages/ModelX.mock-page.js";
+import { Model3 } from "./components/pages/Model3.mock-page";
+import { ModelX } from "./components/pages/ModelX.mock-page";
+import { Roadstar } from "./components/pages/Roadstar.mock-page"
+import { Energy } from "./components/pages/energy.mock-page"
 
 document.addEventListener("DOMContentLoaded", () => {
   const topbarLogoEl = document.getElementById("logo");
@@ -18,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   spaRouter.addRoute("/", TeslaSPage);
   spaRouter.addRoute("/modelx", ModelX);
   spaRouter.addRoute("/model3", Model3);
-  spaRouter.addRoute("/roadstar", TeslaSPage);
-  spaRouter.addRoute("/energy", TeslaSPage);
+  spaRouter.addRoute("/roadstar", Roadstar);
+  spaRouter.addRoute("/energy", Energy);
 
   navBarInstance.addEventListener("change", (event) => {
     spaRouter.navigateTo(event.detail.href);
