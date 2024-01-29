@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeCalculator renders with default state 1`] = `
+"
+        <section class="range">
+            <h2 class="range-header">Range per Charge</h2>
+            <div class="range-image-container" aria-hidden="true">
+                <img src="asset-mock" srcset="asset-mock 800w, asset-mock 1600w" alt="Animated car with spinning wheels">
+                <div id="wheel1" class="range-image-container-wheel" style="animation-duration: 0.9s;">
+                  <img src="asset-mock" srcset="asset-mock 800w, asset-mock 1600w" alt="Animated car with spinning wheels">
+                </div>
+                <div id="wheel2" class="range-image-container-wheel" style="animation-duration: 0.9s;">
+                  <img src="asset-mock" srcset="asset-mock 800w, asset-mock 1600w" alt="Animated car with spinning wheels">
+                </div>
+                
+            </div>
+            <div class="range-result">
+                <range-display id="100d-range" aria-label="Range for 100D" range="798">
+                    <img class="range-result-img" src="asset-mock" srcset="asset-mock 800w, asset-mock 1600w" alt="100 D image">
+                </range-display>
+                <range-display id="p100d-range" aria-label="Range for P100D" range="760">
+                    <img class="range-result-img" src="asset-mock" srcset="asset-mock 800w, asset-mock 1600w" alt="P 100 D image">
+                </range-display>
+            </div>
+            <div class="range-params">
+                <div class="range-params-container ">
+                    <label for="speed-selector" class="range-params-label">Speed</label>
+                    <list-item-selector id="speed-selector" custom-styles="{&quot;width&quot;:&quot;100%&quot;}" items="[140,130,120,110,100,90,80,70]" selected-index="7">
+                    </list-item-selector>
+                </div>
+                <hr>
+                <div class="range-params-container">
+                    <label for="temp-selector" class="range-params-label">Outside Temperature</label>
+                    <div class="range-params-grp-controls">
+                        <list-item-selector id="temp-selector" custom-styles="{&quot;width&quot;:&quot;100%&quot;}" items="[-10]">
+                        </list-item-selector>
+                        <ac-switch id="ac-switch-btn" aria-label="Toggle Air Conditioning" heating="true"></ac-switch>
+                    </div> 
+                </div>
+                <hr>
+                <div class="range-params-container">
+                    <label for="wheel-selector" class="range-params-label">Wheels</label>
+                    <square-radio-buttons id="wheel-selector" items="[19]" custom-styles="{&quot;width&quot;:&quot;100%&quot;}">
+                    </square-radio-buttons>
+                </div>
+            </div>
+            <p class="range-disclaimer-text">
+              The actual amount of range that you experience will vary based on your particular use conditions.
+              Your vehicle range is also dependent on other conditions, such as vehicle configuration, battery age and condition,
+              driving style and operating, environmental and climate conditions. See how some of these particular use conditions 
+              may affect your range in our simulation model.
+            </p>
+        </section>
+        "
+`;

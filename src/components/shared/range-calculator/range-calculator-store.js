@@ -42,7 +42,7 @@ export class RangeCalculatorStore {
         rangeData.ac === this.currentParams.ac
       );
     });
-    return selectedRangeObject.hwy.find(
+    return selectedRangeObject?.hwy.find(
       (hwyObject) => hwyObject.kmh === this.currentParams.speed,
     ).kilometers;
   }
@@ -55,7 +55,7 @@ export class RangeCalculatorStore {
         rangeData.ac === this.currentParams.ac
       );
     });
-    return selectedRangeObject.hwy.find(
+    return selectedRangeObject?.hwy.find(
       (hwyObject) => hwyObject.kmh === this.currentParams.speed,
     ).kilometers;
   }

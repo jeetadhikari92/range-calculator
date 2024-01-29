@@ -41,7 +41,7 @@ class ListItemSelector extends HTMLElement {
 
   applyCustomStyles(customStyles) {
     const listElement = this.shadowRoot.querySelector(".list-item-selector");
-    if (listElement) {
+    if (listElement && customStyles) {
       Object.assign(listElement.style, stringToJson(customStyles));
     }
   }

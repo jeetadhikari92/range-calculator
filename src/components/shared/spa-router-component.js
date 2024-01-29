@@ -74,9 +74,14 @@ class SPARouterComponent extends HTMLElement {
     const appContainer = document.getElementById("app");
     appContainer.innerHTML = "";
 
-    const componentElement = new component();
+    const componentInstance = new component();
+    const componentElement = componentInstance instanceof HTMLElement
+      ? componentInstance
+      : document.createElement('div');
+
     appContainer.appendChild(componentElement);
   }
 }
 
 customElements.define("spa-router", SPARouterComponent);
+export { SPARouterComponent }
