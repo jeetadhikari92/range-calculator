@@ -16,8 +16,8 @@ class SPARouterComponent extends HTMLElement {
     this.removeEventListeners();
   }
 
-  addRoute(path, component) {
-    this.routes.push({ path, component });
+  addRoute(path, lazyLoadCallback) {
+    this.routes.push({ path, lazyLoadCallback });
   }
 
   render() {
@@ -55,12 +55,12 @@ class SPARouterComponent extends HTMLElement {
     }
   }
 
-  navigateTo(path) {
+  async navigateTo(path) {
     const route = this.findRoute(path);
 
     if (route) {
       this.currentRoute = route;
-      this.renderComponent(route.component);
+      await this.lazyLoadAndRenderComponent(route.lazyLoadCallback);
     } else {
       console.error(`Route not found for path: ${path}`);
     }
@@ -70,10 +70,11 @@ class SPARouterComponent extends HTMLElement {
     return this.routes.find((route) => route.path === path);
   }
 
-  renderComponent(component) {
+  async lazyLoadAndRenderComponent(lazyLoadCallback) {
     const appContainer = document.getElementById("app");
     appContainer.innerHTML = "";
 
+    const component = await lazyLoadCallback();
     const componentInstance = new component();
     const componentElement = componentInstance instanceof HTMLElement
       ? componentInstance
@@ -84,4 +85,4 @@ class SPARouterComponent extends HTMLElement {
 }
 
 customElements.define("spa-router", SPARouterComponent);
-export { SPARouterComponent }
+export { SPARouterComponent };

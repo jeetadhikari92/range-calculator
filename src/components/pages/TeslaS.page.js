@@ -49,6 +49,7 @@ class TeslaSPage extends HTMLElement {
       "toggle",
       this.onExpandableContainerToggle,
     );
+    this.querySelector(".main-intro-background").addEventListener('load', console.log)
   }
 
   removeEventListeners() {

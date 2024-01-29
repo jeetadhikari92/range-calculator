@@ -16,5 +16,5 @@ class Model3 extends HTMLElement {
   }
 }
 
-customElements.define("model-3", Model3);
+customElements.define("model-3-page", Model3);
 export { Model3 };

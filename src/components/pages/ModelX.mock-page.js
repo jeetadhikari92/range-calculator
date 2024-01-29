@@ -14,6 +14,11 @@ class ModelX extends HTMLElement {
         </div>
       `;
   }
+
+
+  a() {
+    console.log(1+ 1)
+  }
 }
 
 customElements.define("model-x", ModelX);
