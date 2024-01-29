@@ -75,14 +75,12 @@ class RangeCalculator extends HTMLElement {
                 <hr>
                 <div class="range-params-container">
                     <label for="temp-selector" class="range-params-label">Outside Temperature</label>
-                    <div class="range-params-grp-controls">
                         <list-item-selector id="temp-selector"
                             custom-styles='${paramElementCustomStyle}' 
                             items='[${this.rangeCalculatorStore.getTempList().reverse()}]'>
                         </list-item-selector>
-                        <ac-switch id="ac-switch-btn" aria-label="Toggle Air Conditioning"></ac-switch>
-                    </div> 
                 </div>
+                <ac-switch id="ac-switch-btn" aria-label="Toggle Air Conditioning"></ac-switch>
                 <hr>
                 <div class="range-params-container">
                     <label for="wheel-selector" class="range-params-label">Wheels</label>

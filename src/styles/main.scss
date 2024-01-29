@@ -281,7 +281,6 @@ body {
 
   &-params {
     display: flex;
-    align-items: center;
     gap: 3rem;
     justify-content: space-around;
     width: 100%;
@@ -292,7 +291,6 @@ body {
 
     @include respond(tab-land) { 
       flex-direction: column;
-      align-items:flex-start;
       width: 100%;
     }
 
@@ -301,38 +299,10 @@ body {
       flex-direction: column;
       gap: 0.5rem;
       width: 100%;
-
-      // @include respond(tab-land) {
-      //   width: 100%;
-      // }
-
     }
 
     &-label {
       color: grey;
-    }
-
-    &-grp-controls {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      height: 80px;
-
-      & > #temp-selector {
-        flex-grow: 3;
-      }
-
-      & > #ac-switch-btn {
-        flex-grow: 0;
-      }
-
-      @include respond(tab-pro-land) { 
-        gap: 1rem;
-      }
-
-      @include respond(tab-land) {
-        display: contents;
-      }
     }
 
     & > hr {
@@ -340,7 +310,7 @@ body {
       border: 0.5px solid lightgray;
 
       @include respond(tab-land) { 
-        height: 0;
+        display: none;
       }
     }
   }
@@ -352,7 +322,7 @@ body {
 
 .hidden {
   opacity: 0;
-  transition: all 3s;
+  transition: all 2s;
 }
 
 .show {
