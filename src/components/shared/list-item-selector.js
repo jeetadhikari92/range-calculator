@@ -34,7 +34,7 @@ class ListItemSelector extends HTMLElement {
       this.render();
     } else if (attrName === "custom-styles") {
       this.applyCustomStyles(newValue);
-    } else if(attrName === "selected-index") {
+    } else if (attrName === "selected-index") {
       this.selectedIndex = parseInt(newValue);
     }
   }

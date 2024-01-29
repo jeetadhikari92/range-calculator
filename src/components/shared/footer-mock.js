@@ -1,7 +1,7 @@
 class FooterMock extends HTMLElement {
-    constructor() {
-        super()
-        this.innerHTML = `
+  constructor() {
+    super();
+    this.innerHTML = `
         <footer class="footer">
       <section class="footer-section">
         <h4 class="footer-section-header">CONTACT US</h4>
@@ -42,8 +42,8 @@ class FooterMock extends HTMLElement {
         </div>
       </section>
     </footer>
-    `
-    }
+    `;
+  }
 }
 
-customElements.define('footer-mock', FooterMock)
+customElements.define("footer-mock", FooterMock);

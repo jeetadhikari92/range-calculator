@@ -9,7 +9,7 @@ module.exports = {
       __dirname,
       "src/components/shared/spa-router-component.js",
     ),
-    footer: path.resolve(__dirname, "src/components/shared/footer-mock.js")
+    footer: path.resolve(__dirname, "src/components/shared/footer-mock.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),

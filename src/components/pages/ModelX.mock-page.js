@@ -6,18 +6,19 @@ import carBackgroundImage from "../../assets/images/hero-image@2x.png";
 class ModelX extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
+      <main class="main">
         <div class="main-intro">
           <img class="main-intro-background" src="${carBackgroundImage}" 
           srcset="${carBackgroundSmallImage} 800w, ${carBackgroundImage} 1600w" 
           alt="Tesla S background image" />
           <h1 style="color: white;position: absolute;top: 30%;left: 47%;">This is a Page for Model X</h1>
         </div>
+      </main>
       `;
   }
 
-
   a() {
-    console.log(1+ 1)
+    console.log(1 + 1);
   }
 }
 

@@ -15,7 +15,7 @@ import "../ac-switch.js";
 import "../square-radio-buttons.js";
 import "../range-display.js";
 
-let paramElementCustomStyle = JSON.stringify({width: '100%'})
+let paramElementCustomStyle = JSON.stringify({ width: "100%" });
 
 class RangeCalculator extends HTMLElement {
   constructor(rangeData) {
@@ -110,7 +110,7 @@ class RangeCalculator extends HTMLElement {
     const hundredDObserver = new RangeObserver("100d-range", "100d");
     const pHundredDObserver = new RangeObserver("p100d-range", "p100d");
     const acObserver = new TemperatureObserver("ac-switch-btn", "heating");
-    const wheelObserver = new WheelObserver("wheel1", "wheel2")
+    const wheelObserver = new WheelObserver("wheel1", "wheel2");
 
     this.rangeCalculatorStore.addObserver(hundredDObserver);
     this.rangeCalculatorStore.addObserver(pHundredDObserver);

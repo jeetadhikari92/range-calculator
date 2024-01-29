@@ -49,7 +49,6 @@ class TeslaSPage extends HTMLElement {
       "toggle",
       this.onExpandableContainerToggle,
     );
-    this.querySelector(".main-intro-background").addEventListener('load', console.log)
   }
 
   removeEventListeners() {
@@ -63,7 +62,7 @@ class TeslaSPage extends HTMLElement {
     const expandableContainer = this.querySelector("expandable-container");
     const existingRangeSelectorComponent =
       expandableContainer.querySelector("range-calculator");
-    
+
     // Prepare to lazy load the range calculator if it doesnt exist already.
     if (!existingRangeSelectorComponent) {
       this.setupRangeCalculator(expandableContainer).then(() => {
@@ -92,16 +91,16 @@ class TeslaSPage extends HTMLElement {
 
   observeForAnimation() {
     const animationObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add("show")
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
         } else {
-          entry.target.classList.remove("show")
+          entry.target.classList.remove("show");
         }
-      })
+      });
     });
-    const hiddenElement = this.querySelectorAll('.hidden')
-    hiddenElement.forEach(el => animationObserver.observe(el))
+    const hiddenElement = this.querySelectorAll(".hidden");
+    hiddenElement.forEach((el) => animationObserver.observe(el));
   }
 }
 

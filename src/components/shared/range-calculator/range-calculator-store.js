@@ -6,7 +6,7 @@ export class RangeCalculatorStore {
     this.speedList = this.getSpeedsList();
     this.tempList = this.getTempList();
     this.wheelsizeList = this.getWheelSizeList();
-    
+
     this.currentParams = {
       speed: this.speedList[0],
       temp: this.tempList[this.tempList.length - 1],

@@ -124,4 +124,4 @@ class SquareRadioButtons extends HTMLElement {
 }
 
 customElements.define("square-radio-buttons", SquareRadioButtons);
-export { SquareRadioButtons }
+export { SquareRadioButtons };

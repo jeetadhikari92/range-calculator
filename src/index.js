@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerEl.appendChild(navBarInstance);
 
   const spaRouter = document.querySelector("spa-router");
-  
+
   spaRouter.addRoute("/", async () => {
     await import("./components/pages/TeslaS.page");
     return customElements.get("tesla-s-page");

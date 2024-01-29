@@ -76,9 +76,10 @@ class SPARouterComponent extends HTMLElement {
 
     const component = await lazyLoadCallback();
     const componentInstance = new component();
-    const componentElement = componentInstance instanceof HTMLElement
-      ? componentInstance
-      : document.createElement('div');
+    const componentElement =
+      componentInstance instanceof HTMLElement
+        ? componentInstance
+        : document.createElement("div");
 
     appContainer.appendChild(componentElement);
   }

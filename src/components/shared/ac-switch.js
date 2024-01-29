@@ -121,4 +121,4 @@ class AcSwitch extends HTMLElement {
 }
 
 customElements.define("ac-switch", AcSwitch);
-export { AcSwitch }
+export { AcSwitch };
