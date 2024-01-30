@@ -4,7 +4,7 @@ Range Calculator App for Tesla Model S! Calculate the battery range for two type
 
 ## Live Version
 
-Check out the live version of the app at [range-calculator.vercel.app](range-calculator.vercel.app).
+Check out the live version of the app [here](https://range-calculator.vercel.app/).
 
 ## Getting Started Locally
 
