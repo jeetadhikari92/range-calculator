@@ -138,7 +138,7 @@ class RangeCalculator extends HTMLElement {
       "change",
       this.handleParamsChange.bind(this),
     );
-    // Showing car wheels after base car image is loaded.
+    // Showing car wheels after base car image is loaded. (for slow internet)
     this.carBaseImgEl.addEventListener("load", this.showWheels.bind(this));
   }
 
